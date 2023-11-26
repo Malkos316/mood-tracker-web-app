@@ -24,9 +24,9 @@ body {
 }
 
 .react-calendar {
-  background-color: #222831;
+  background-color: #222831 !important;
 }
 
 .react-calendar__tile {
-  background-color: #222831;
+  background-color: #222831 !important;
 }

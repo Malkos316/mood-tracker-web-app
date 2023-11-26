@@ -32,7 +32,6 @@ const MonthViewCalendar = () => {
                     onChange={(date) => setSelectedDate(date)}
                     value={selectedDate}
                     tileContent={tileContent}
-                    backgroundColor="#222831"
                 />
             </div>
             {selectedDate && (
