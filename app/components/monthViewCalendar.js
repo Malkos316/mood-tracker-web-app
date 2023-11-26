@@ -27,12 +27,12 @@ const MonthViewCalendar = () => {
 
     return (
         <div className="container mx-auto mt-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Month View Calendar</h2>
             <div className="flex justify-center">
                 <Calendar
                     onChange={(date) => setSelectedDate(date)}
                     value={selectedDate}
                     tileContent={tileContent}
+                    backgroundColor="#222831"
                 />
             </div>
             {selectedDate && (
