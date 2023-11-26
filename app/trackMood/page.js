@@ -1,5 +1,8 @@
-import React from 'react'
-import { header } from '../components/header'
+"use client";
+import React from 'react';
+import { header } from '../components/header';
+import MoodLevel from '../components/moodLevel';
+import MonthViewCalendar from '../components/monthViewCalendar';
 
 export default function Home() {
     return (
@@ -8,9 +11,7 @@ export default function Home() {
                 {header()}
             </div>
             <div>
-                <h1>
-                    Mood Tracker Page
-                </h1>
+                <MonthViewCalendar />
             </div>
         </main>
     );
