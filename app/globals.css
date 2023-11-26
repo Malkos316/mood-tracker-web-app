@@ -23,7 +23,8 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-/* THESE NEED TO REMAIN IMPORTANT OR THE CALENDAR WILL APPEAR AS WHITE TEXT ON WHITE */
+/* THIS NEEDs TO REMAIN IMPORTANT OR THE CALENDAR WILL APPEAR AS WHITE TEXT ON WHITE BACKGROUND
+You cannot change the color in the node_modules/react-calendar/dist/Calendat.css file because vercel does not use local node_modules */
 .react-calendar {
   background-color: #222831 !important;
 }
