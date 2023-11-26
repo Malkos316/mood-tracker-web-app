@@ -23,10 +23,7 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+/* THESE NEED TO REMAIN IMPORTANT OR THE CALENDAR WILL APPEAR AS WHITE TEXT ON WHITE */
 .react-calendar {
-  background-color: #222831 !important;
-}
-
-.react-calendar__tile {
   background-color: #222831 !important;
 }
