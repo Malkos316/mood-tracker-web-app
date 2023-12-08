@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 
-export function header() {
+export default function Header() {
     return (
         <>
             <div className=" bg-primary ">

@@ -29,7 +29,7 @@ const EmotionSelector = ({ onSelect }) => {
                 {emotions.map((emotion) => (
                     <div
                         key={emotion}
-                        className={`border p-2 m-2 cursor-pointer text-primary ${selectedEmotions.includes(emotion) ? ' bg-secondary-200' : 'bg-white'
+                        className={`p-2 m-2 cursor-pointer text-white ${selectedEmotions.includes(emotion) ? ' bg-secondary-200' : 'bg-secondary-100'
                             }`}
                         onClick={() => toggleEmotion(emotion)}
                     >

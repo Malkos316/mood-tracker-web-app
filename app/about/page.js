@@ -1,34 +1,27 @@
 import React from 'react';
-import { header } from '../components/header';
+import Header from '../components/header';
 
 export default function About() {
     return (
         <main>
             <div>
-                {header()}
+                <Header />
             </div>
             <div className='mt-4'>
                 <h1 className='flex justify-center text-lg'>
                     About this WebApp
                 </h1>
-                <p className='flex flex-col justify-center'>
+                <div className='flex flex-col justify-center'>
                     <p className='flex justify-center'>
-                        This webapp was created to help people track their moods.
-                        The Idea is this:
+                        This is a proof of concept web application that allows users to track their mood over time.
                     </p>
                     <p className='flex justify-center'>
-                        login using OAUTH and a google account.
+                    The application was built using React, Next.js, and Tailwind CSS.
                     </p>
                     <p className='flex justify-center'>
-                        Home page:
+                    At this point in time, the application is not connected to a database, so all data is stored locally in the browser.
                     </p>
-                    <p className='flex justify-center'>
-                        The home page should have a calendar, with each day having a mood rating.
-                    </p>
-                    <p className='flex justify-center'>
-                        the user should be able to scroll through the months and years to see their mood history.
-                    </p>
-                </p>
+                </div>
             </div>
         </main>
     );

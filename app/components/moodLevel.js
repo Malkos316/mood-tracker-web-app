@@ -1,31 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import EmotionSelector from './emotionSelector';
+import DescriptionInput from './DescriptionInput';
 
-const MoodLevel = ({ onSave }) => {
-    const [selectedLevel, setSelectedLevel] = useState(null);
+const MoodLevel = ({ selectedMood, setSelectedMood, onSave }) => { // Add selectedMood and setSelectedMood props here
+    const [description, setDescription] = useState("");
 
-    // Load saved mood level from local storage on component mount
     useEffect(() => {
         const savedLevel = localStorage.getItem('moodLevel');
         if (savedLevel) {
-            setSelectedLevel(parseInt(savedLevel, 10));
+            setSelectedMood(parseInt(savedLevel, 10)); // Use setSelectedMood instead of setSelectedLevel
         }
     }, []);
-
-    /**
-     * Save the selected mood level and emotions.
-     *
-     * @param {number} moodLevel - Selected mood level.
-     * @param {string[]} selectedEmotions - Selected emotions.
-     */
-    const saveMood = (moodLevel, selectedEmotions) => {
-        if (moodLevel !== null) {
-            localStorage.setItem('moodLevel', moodLevel.toString());
-            onSave(moodLevel, selectedEmotions);
-        } else {
-            alert('Please select a mood level first.');
-        }
-    };
 
     return (
         <div className="flex justify-center">
@@ -35,16 +20,30 @@ const MoodLevel = ({ onSave }) => {
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((level) => (
                         <div
                             key={level}
-                            className={`border border-gray-300 p-2 m-2 cursor-pointer text-primary rounded ${selectedLevel === level ? ' bg-secondary-200' : 'bg-white'
+                            className={` p-2 m-2 cursor-pointer text-white rounded ${selectedMood === level ? ' bg-secondary-200' : ' bg-secondary-100'
                                 }`}
-                            onClick={() => setSelectedLevel(level)}
+                            onClick={() => setSelectedMood(level)} // Use setSelectedMood instead of setSelectedLevel
                         >
                             {level}
                         </div>
                     ))}
                 </div>
-                {/* Render the EmotionSelector component with the existing styling */}
-                <EmotionSelector onSelect={(selectedEmotions) => saveMood(selectedLevel, selectedEmotions)} />
+                <DescriptionInput 
+                    value={description}
+                    onChange={(event) => setDescription(event.target.value)}
+                />
+                <EmotionSelector 
+                    onSelect={(selectedEmotions) => {
+                        if (selectedMood !== null && selectedEmotions.length > 0 && description !== '') {
+                            localStorage.setItem('moodLevel', selectedMood.toString()); // Use selectedMood instead of selectedLevel
+                            onSave(selectedMood, selectedEmotions, description); // Use selectedMood instead of selectedLevel
+                            setDescription(''); // Clear the description here
+                            setSelectedMood(null); // Clear the mood level here
+                        } else {
+                            alert('Please make sure you have selected a mood level, specified emotions, and have a description.');
+                        }
+                    }} 
+                />
             </div>
         </div>
     );

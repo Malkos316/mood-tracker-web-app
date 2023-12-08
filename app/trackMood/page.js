@@ -1,14 +1,13 @@
 "use client";
 import React from 'react';
-import { header } from '../components/header';
-import MoodLevel from '../components/moodLevel';
+import Header from '../components/header';
 import MonthViewCalendar from '../components/monthViewCalendar';
 
 export default function Home() {
     return (
         <main>
             <div>
-                {header()}
+                <Header />
             </div>
             <div>
                 <MonthViewCalendar />

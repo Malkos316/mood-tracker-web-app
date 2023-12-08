@@ -1,16 +1,16 @@
+"use client";
 import React from 'react'
-import { header } from './components/header'
+import Header from './components/header'
+import MoodList from './components/moodList'
 
 export default function Home() {
 	return (
 		<main>
 			<div>
-				{header()}
+				<Header />
 			</div>
 			<div>
-				<h1>
-					Home page
-				</h1>
+				<MoodList />
 			</div>
 		</main>
 	);
