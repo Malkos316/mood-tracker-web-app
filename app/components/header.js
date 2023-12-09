@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Header() {
     return (
         <>
-            <div className=" bg-primary ">
+            <header className=" bg-primary ">
                 <div className=" flex justify-center">
                     <h1 className=" p-6 text-5xl text">
                         Mood Tracker
@@ -21,7 +21,7 @@ export default function Header() {
                         <Link href="/about"> About </Link>
                     </button>
                 </div>
-            </div>
+            </header>
         </>
     );
 }

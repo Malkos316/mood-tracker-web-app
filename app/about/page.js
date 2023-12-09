@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 export default function About() {
     return (
@@ -22,6 +23,9 @@ export default function About() {
                     At this point in time, the application is not connected to a database, so all data is stored locally in the browser.
                     </p>
                 </div>
+            </div>
+            <div>
+                <Footer />
             </div>
         </main>
     );
