@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import EmotionSelector from './emotionSelector';
 import DescriptionInput from './DescriptionInput';
+import EmotionSelector from './emotionSelector';
 
 const MoodLevel = ({ selectedMood, setSelectedMood, onSave }) => { // Add selectedMood and setSelectedMood props here
     const [description, setDescription] = useState("");

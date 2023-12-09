@@ -15,7 +15,7 @@ export default function Header() {
                         <Link href="/"> Home </Link>
                     </button>
                     <button className=" p-1 pr-2 pl-2 rounded-md bg-secondary-100 hover:bg-secondary-200 ">
-                        <Link href="/trackMood"> Mood Tracker </Link>
+                        <Link href="/moodData"> Mood Data </Link>
                     </button>
                     <button className=" p-1 pr-2 pl-2 rounded-md bg-secondary-100 hover:bg-secondary-200 ">
                         <Link href="/about"> About </Link>
